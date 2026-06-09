@@ -386,11 +386,13 @@
   .ep-nav__btn:hover { background: var(--white); color: var(--black); }
   .ep-nav__btn--ghost { background: transparent; color: var(--black); border-color: var(--grey-mid); }
   .ep-nav__btn--ghost:hover { border-color: var(--black); background: transparent; }
-  @media (max-width: 520px) {
-    .ep-nav__inner { padding: 0 20px; }
+  @media (max-width: 768px) {
+    .ep-nav__inner { padding: 0 16px; gap: 12px; }
     .ep-nav__context { display: none; }
     .ep-nav__divider { display: none; }
-    .ep-nav__btn { padding: 8px 14px; font-size: 9px; }
+    .ep-nav__logo span { font-size: 11px; letter-spacing: 0.14em; }
+    .ep-nav__btn { padding: 8px 12px; font-size: 9px; letter-spacing: 0.16em; }
+    .ep-nav__actions { gap: 6px; }
   }
 
   /* ---- ANIMATIONS ---- */
@@ -547,7 +549,7 @@
     </div>
 
     <div class="pulse-svg-wrap reveal">
-      <svg id="pulse-svg" viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;display:block;margin:0 auto;">
+      <svg id="pulse-svg" viewBox="100 0 700 560" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;display:block;margin:0 auto;">
         <style>
           .pd-fig     { fill: #e4e4ea; }
           .pd-line    { stroke: #c0bdb8; stroke-width: 0.8; fill: none; }
@@ -558,7 +560,7 @@
           .pd-dot-g:hover .pd-dot-bg  { stroke: #7a8a8a; }
           .pd-dot-g:hover .pd-dot-ctr { fill: #7a8a8a; }
           .pd-dot-g:hover .pd-dot-ring { opacity: 1; }
-          .pd-title     { font-family: 'Futura','Century Gothic',sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; fill: #1a1a1a; }
+          .pd-title     { font-family: 'Futura','Century Gothic',sans-serif; font-size: 15px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; fill: #1a1a1a; }
         </style>
         <circle class="pd-fig" cx="440" cy="42" r="32"/>
         <rect class="pd-fig" x="429" y="73" width="22" height="20" rx="8"/>
@@ -569,13 +571,13 @@
         <rect class="pd-fig" x="490" y="195" width="26" height="82" rx="13"/>
         <rect class="pd-fig" x="398" y="232" width="38" height="245" rx="16"/>
         <rect class="pd-fig" x="444" y="232" width="38" height="245" rx="16"/>
-        <polyline class="pd-line" points="413,14 300,14 220,14"/>
-        <polyline class="pd-line" points="410,42 300,42 220,42"/>
-        <polyline class="pd-line" points="429,83 300,83 220,83"/>
-        <polyline class="pd-line" points="396,148 300,148 220,148"/>
-        <polyline class="pd-line" points="503,195 640,195 660,195"/>
-        <polyline class="pd-line" points="503,270 640,270 660,270"/>
-        <polyline class="pd-line" points="471,380 610,380 660,380"/>
+        <polyline class="pd-line" points="413,14 300,14 260,14"/>
+        <polyline class="pd-line" points="410,42 300,42 260,42"/>
+        <polyline class="pd-line" points="429,83 300,83 260,83"/>
+        <polyline class="pd-line" points="396,148 300,148 260,148"/>
+        <polyline class="pd-line" points="503,195 610,195 630,195"/>
+        <polyline class="pd-line" points="503,270 610,270 630,270"/>
+        <polyline class="pd-line" points="471,380 580,380 600,380"/>
         <g class="pd-dot-g" id="pdg-hair"><circle class="pd-dot-bg" cx="440" cy="14" r="8"/><circle class="pd-dot-ctr" cx="440" cy="14" r="3"/><circle class="pd-dot-ring" cx="440" cy="14" r="12"/></g>
         <g class="pd-dot-g" id="pdg-temple"><circle class="pd-dot-bg" cx="410" cy="42" r="8"/><circle class="pd-dot-ctr" cx="410" cy="42" r="3"/><circle class="pd-dot-ring" cx="410" cy="42" r="12"/><circle class="pd-dot-bg" cx="470" cy="42" r="8"/><circle class="pd-dot-ctr" cx="470" cy="42" r="3"/><circle class="pd-dot-ring" cx="470" cy="42" r="12"/></g>
         <g class="pd-dot-g" id="pdg-neck"><circle class="pd-dot-bg" cx="440" cy="83" r="8"/><circle class="pd-dot-ctr" cx="440" cy="83" r="3"/><circle class="pd-dot-ring" cx="440" cy="83" r="12"/></g>
@@ -583,13 +585,13 @@
         <g class="pd-dot-g" id="pdg-elbow"><circle class="pd-dot-bg" cx="376" cy="195" r="8"/><circle class="pd-dot-ctr" cx="376" cy="195" r="3"/><circle class="pd-dot-ring" cx="376" cy="195" r="12"/><circle class="pd-dot-bg" cx="503" cy="195" r="8"/><circle class="pd-dot-ctr" cx="503" cy="195" r="3"/><circle class="pd-dot-ring" cx="503" cy="195" r="12"/></g>
         <g class="pd-dot-g" id="pdg-wrist"><circle class="pd-dot-bg" cx="376" cy="270" r="8"/><circle class="pd-dot-ctr" cx="376" cy="270" r="3"/><circle class="pd-dot-ring" cx="376" cy="270" r="12"/><circle class="pd-dot-bg" cx="503" cy="270" r="8"/><circle class="pd-dot-ctr" cx="503" cy="270" r="3"/><circle class="pd-dot-ring" cx="503" cy="270" r="12"/></g>
         <g class="pd-dot-g" id="pdg-knee"><circle class="pd-dot-bg" cx="417" cy="380" r="8"/><circle class="pd-dot-ctr" cx="417" cy="380" r="3"/><circle class="pd-dot-ring" cx="417" cy="380" r="12"/><circle class="pd-dot-bg" cx="463" cy="380" r="8"/><circle class="pd-dot-ctr" cx="463" cy="380" r="3"/><circle class="pd-dot-ring" cx="463" cy="380" r="12"/></g>
-        <text class="pd-title" x="212" y="18" text-anchor="end">Cheveux</text>
-        <text class="pd-title" x="212" y="46" text-anchor="end">Tempes</text>
-        <text class="pd-title" x="212" y="87" text-anchor="end">Cou &amp; Nuque</text>
-        <text class="pd-title" x="212" y="152" text-anchor="end">Décolleté</text>
-        <text class="pd-title" x="668" y="199" text-anchor="start">Creux du Coude</text>
-        <text class="pd-title" x="668" y="274" text-anchor="start">Poignets</text>
-        <text class="pd-title" x="668" y="384" text-anchor="start">Creux des Genoux</text>
+        <text class="pd-title" x="252" y="18" text-anchor="end">Cheveux</text>
+        <text class="pd-title" x="252" y="46" text-anchor="end">Tempes</text>
+        <text class="pd-title" x="252" y="87" text-anchor="end">Cou &amp; Nuque</text>
+        <text class="pd-title" x="252" y="152" text-anchor="end">Décolleté</text>
+        <text class="pd-title" x="638" y="199" text-anchor="start">Creux du Coude</text>
+        <text class="pd-title" x="638" y="274" text-anchor="start">Poignets</text>
+        <text class="pd-title" x="608" y="384" text-anchor="start">Creux des Genoux</text>
       </svg>
     </div>
 
