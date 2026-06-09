@@ -273,11 +273,13 @@
   .ep-nav__btn:hover { background: var(--white); color: var(--black); }
   .ep-nav__btn--ghost { background: transparent; color: var(--black); border-color: var(--grey-mid); }
   .ep-nav__btn--ghost:hover { border-color: var(--black); background: transparent; }
-  @media (max-width: 520px) {
-    .ep-nav__inner { padding: 0 20px; }
+  @media (max-width: 768px) {
+    .ep-nav__inner { padding: 0 16px; gap: 12px; }
     .ep-nav__context { display: none; }
     .ep-nav__divider { display: none; }
-    .ep-nav__btn { padding: 8px 14px; font-size: 9px; }
+    .ep-nav__logo span { font-size: 11px; letter-spacing: 0.14em; }
+    .ep-nav__btn { padding: 8px 12px; font-size: 9px; letter-spacing: 0.16em; }
+    .ep-nav__actions { gap: 6px; }
   }
 
   @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
