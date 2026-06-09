@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://conseil.eldoraprime.com/sitemap.xml
