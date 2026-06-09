@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>L'Art du Parfum | Guide Expert & Diagnostic Olfactif | Eldora Prime</title>
+<meta name="description" content="Découvrez votre profil olfactif grâce à notre diagnostic expert. Familles olfactives, points de pulsation, pyramide aromatique et conseils d'application personnalisés." />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --white: #ffffff;
+    --black: #1a1a1a;
+    --grey-light: #f5f4f1;
+    --grey-mid: #e6e5e1;
+    --grey-soft: #aca9a0;
+    --accent: #7a8a8a;
+    --accent-light: #c8d0d0;
+    --transition: 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Futura', 'Century Gothic', 'Trebuchet MS', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Futura', 'Century Gothic', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-family: 'Futura', 'Century Gothic', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    color: #3a3a3a;
+  }
+
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* ---- HERO ---- */
+  .hero {
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--white);
+    border-bottom: 1px solid var(--grey-mid);
+  }
+
+  .hero__grid-lines { position: absolute; inset: 0; pointer-events: none; opacity: 0.04; }
+  .hero__grid-lines::before { content: ''; position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: var(--black); }
+  .hero__grid-lines::after  { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--black); }
+
+  .hero__eyebrow {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--grey-soft);
+    margin-bottom: 36px;
+    position: relative;
+    padding-left: 48px;
+  }
+  .hero__eyebrow::before { content: ''; position: absolute; left: 0; top: 50%; width: 36px; height: 1px; background: var(--grey-soft); }
+
+  .hero__title { font-size: clamp(38px, 6vw, 76px); letter-spacing: 0.08em; line-height: 1.08; font-weight: 500; color: var(--black); margin-bottom: 32px; }
+  .hero__title em { font-style: normal; font-weight: 300; display: block; }
+
+  .hero__subtitle { font-size: 14px; letter-spacing: 0.08em; color: #6a6a6a; max-width: 460px; margin-bottom: 52px; line-height: 1.9; font-weight: 300; }
+
+  .hero__cta {
+    display: inline-block; padding: 18px 48px;
+    background: var(--black); color: var(--white);
+    font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
+    text-decoration: none; border: 1px solid var(--black); cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+    font-family: 'Futura', 'Century Gothic', sans-serif; font-weight: 500;
+  }
+  .hero__cta:hover { background: var(--white); color: var(--black); }
+
+  .hero__content { position: relative; z-index: 1; animation: fadeUp 1.1s ease both; }
+
+  .hero__deco {
+    position: absolute; right: 8vw; top: 50%; transform: translateY(-50%);
+    width: 1px; height: 220px;
+    background: linear-gradient(to bottom, transparent, var(--grey-mid), transparent);
+    animation: fadeIn 1.4s 0.4s ease both; pointer-events: none;
+  }
+
+  /* ---- INTRO ---- */
+  .intro { padding: 100px 0; border-bottom: 1px solid var(--grey-mid); }
+  .intro__label { font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--grey-soft); margin-bottom: 28px; display: block; }
+  .intro__heading { font-size: clamp(22px, 3vw, 32px); letter-spacing: 0.1em; font-weight: 500; line-height: 1.3; margin-bottom: 40px; max-width: 640px; }
+  .intro__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 60px; }
+  .intro__col p { font-size: 14px; line-height: 1.95; color: #5a5a5a; }
+
+  /* ---- FAMILIES ---- */
+  .families { padding: 100px 0; background: var(--grey-light); border-bottom: 1px solid var(--grey-mid); }
+  .section__label { font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--grey-soft); margin-bottom: 28px; display: block; }
+  .section__heading { font-size: clamp(20px, 2.8vw, 30px); letter-spacing: 0.12em; font-weight: 500; margin-bottom: 60px; }
+
+  .families__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--grey-mid); border: 1px solid var(--grey-mid); }
+  .family-card { background: var(--white); padding: 40px 28px; transition: background var(--transition); }
+  .family-card:hover { background: var(--grey-light); }
+  .family-card__number { font-size: 10px; letter-spacing: 0.28em; color: var(--grey-soft); margin-bottom: 20px; display: block; }
+  .family-card__name { font-size: 13px; letter-spacing: 0.2em; font-weight: 500; text-transform: uppercase; margin-bottom: 16px; }
+  .family-card__desc { font-size: 13px; line-height: 1.8; color: #6a6a6a; font-weight: 300; }
+
+  /* ---- PULSE POINTS DIAGRAM ---- */
+  .pulse-section { padding: 100px 0; border-bottom: 1px solid var(--grey-mid); }
+  .pulse-intro { margin-bottom: 60px; }
+  .pulse-intro p { font-size: 14px; max-width: 520px; line-height: 1.95; color: #5a5a5a; margin-top: 20px; font-weight: 300; }
+
+  .pulse-svg-wrap {
+    padding: 40px 20px;
+    background: transparent;
+  }
+
+  .pulse-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--grey-mid);
+    border: 1px solid var(--grey-mid);
+  }
+
+  .pulse-detail-card { background: var(--white); padding: 28px 24px; transition: background var(--transition); }
+  .pulse-detail-card:hover { background: var(--grey-light); }
+  .pulse-detail-card__header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--grey-mid); }
+  .pulse-detail-card__num { font-size: 10px; letter-spacing: 0.22em; color: var(--grey-soft); }
+  .pulse-detail-card__name { font-size: 12px; letter-spacing: 0.2em; font-weight: 500; text-transform: uppercase; flex: 1; }
+  .pulse-detail-card__badge { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); white-space: nowrap; }
+  .pulse-detail-card__text { font-size: 12.5px; line-height: 1.8; color: #6a6a6a; font-weight: 300; }
+
+  .pulse-legend {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--grey-mid);
+    border: 1px solid var(--grey-mid);
+  }
+  .pulse-legend-item { background: var(--white); padding: 28px 24px; }
+  .pulse-legend-item__label { font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--grey-soft); margin-bottom: 8px; display: block; }
+  .pulse-legend-item__title { font-size: 12px; letter-spacing: 0.16em; font-weight: 500; text-transform: uppercase; margin-bottom: 10px; }
+  .pulse-legend-item__text { font-size: 13px; line-height: 1.8; color: #6a6a6a; font-weight: 300; }
+
+  /* ---- APPLICATION ---- */
+  .application { padding: 100px 0; background: var(--grey-light); border-bottom: 1px solid var(--grey-mid); }
+  .application__steps { margin-top: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .application__col { padding: 0 0 60px; }
+  .application__col:first-child { padding-right: 60px; border-right: 1px solid var(--grey-mid); }
+  .application__col:last-child  { padding-left: 60px; }
+  .application__col-label { font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--grey-soft); margin-bottom: 32px; display: block; }
+  .application__step { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--grey-mid); }
+  .application__step:last-child { border-bottom: none; }
+  .application__step-num { font-size: 10px; letter-spacing: 0.2em; color: var(--grey-soft); min-width: 28px; padding-top: 3px; }
+  .application__step-name { font-size: 12px; letter-spacing: 0.2em; font-weight: 500; text-transform: uppercase; margin-bottom: 6px; }
+  .application__step-desc { font-size: 13px; line-height: 1.8; color: #6a6a6a; font-weight: 300; }
+
+  /* ---- NOTES PYRAMID ---- */
+  .pyramid-section { padding: 100px 0; border-bottom: 1px solid var(--grey-mid); }
+  .pyramid-intro p { font-size: 14px; max-width: 520px; line-height: 1.95; color: #5a5a5a; margin-top: 20px; font-weight: 300; }
+
+  .pyramid__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--grey-mid); border: 1px solid var(--grey-mid); margin-top: 60px; }
+  .pyramid-card { background: var(--white); padding: 36px 28px; transition: background var(--transition); }
+  .pyramid-card:hover { background: var(--grey-light); }
+  .pyramid-card__label { font-size: 10px; letter-spacing: 0.22em; font-weight: 400; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; display: block; }
+  .pyramid-card__name { font-size: 12px; letter-spacing: 0.22em; font-weight: 500; text-transform: uppercase; margin-bottom: 12px; }
+  .pyramid-card__duration { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey-soft); margin-bottom: 14px; }
+  .pyramid-card__desc { font-size: 13px; line-height: 1.8; color: #6a6a6a; font-weight: 300; }
+  .pyramid-card__examples { margin-top: 16px; font-size: 12px; letter-spacing: 0.06em; color: #9a9a9a; font-weight: 300; font-style: italic; }
+
+  /* ---- QUIZ ---- */
+  .quiz-section { padding: 100px 0; border-top: 1px solid var(--grey-mid); }
+  .quiz-intro { margin-bottom: 70px; }
+  .quiz-intro p { font-size: 14px; max-width: 520px; line-height: 1.95; color: #5a5a5a; margin-top: 20px; }
+
+  .quiz-progress { display: flex; align-items: center; gap: 16px; margin-bottom: 60px; }
+  .quiz-progress__bar { flex: 1; height: 1px; background: var(--grey-mid); position: relative; overflow: hidden; }
+  .quiz-progress__fill { position: absolute; top: 0; left: 0; bottom: 0; background: var(--black); transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1); width: 0%; }
+  .quiz-progress__label { font-size: 10px; letter-spacing: 0.24em; color: var(--grey-soft); text-transform: uppercase; white-space: nowrap; }
+
+  .quiz-question { display: none; animation: fadeUp 0.5s ease both; }
+  .quiz-question.active { display: block; }
+  .quiz-question__number { font-size: 10px; letter-spacing: 0.32em; color: var(--grey-soft); text-transform: uppercase; margin-bottom: 16px; display: block; }
+  .quiz-question__text { font-size: clamp(18px, 2.5vw, 26px); letter-spacing: 0.1em; font-weight: 500; margin-bottom: 12px; line-height: 1.3; }
+  .quiz-question__hint { font-size: 13px; color: var(--grey-soft); font-weight: 300; margin-bottom: 40px; letter-spacing: 0.04em; }
+
+  .quiz-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 40px; }
+  .quiz-options--single { grid-template-columns: 1fr; }
+  .quiz-options--three  { grid-template-columns: repeat(3, 1fr); }
+
+  .quiz-option { display: flex; align-items: flex-start; gap: 14px; padding: 22px 24px; border: 1px solid var(--grey-mid); cursor: pointer; transition: border-color var(--transition), background var(--transition); background: var(--white); }
+  .quiz-option:hover { border-color: #999; }
+  .quiz-option.selected { border-color: var(--black); background: var(--grey-light); }
+
+  .quiz-option__check { width: 16px; height: 16px; border: 1px solid var(--grey-mid); flex-shrink: 0; margin-top: 2px; transition: background var(--transition), border-color var(--transition); display: flex; align-items: center; justify-content: center; }
+  .quiz-option.selected .quiz-option__check { background: var(--black); border-color: var(--black); }
+  .quiz-option__check::after { content: ''; width: 6px; height: 6px; background: var(--white); display: block; opacity: 0; transition: opacity 0.2s; }
+  .quiz-option.selected .quiz-option__check::after { opacity: 1; }
+
+  .quiz-option__label { font-size: 13px; letter-spacing: 0.06em; font-weight: 300; line-height: 1.6; color: var(--black); }
+  .quiz-option__label strong { display: block; font-size: 12px; letter-spacing: 0.18em; font-weight: 500; text-transform: uppercase; margin-bottom: 4px; }
+
+  .quiz-scale { margin-bottom: 40px; }
+  .quiz-scale__track { position: relative; padding: 20px 0; }
+  .quiz-scale__input { -webkit-appearance: none; appearance: none; width: 100%; height: 1px; background: var(--grey-mid); outline: none; cursor: pointer; }
+  .quiz-scale__input::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; background: var(--black); border-radius: 0; cursor: pointer; transition: transform 0.2s; }
+  .quiz-scale__input::-webkit-slider-thumb:hover { transform: scale(1.2); }
+  .quiz-scale__input::-moz-range-thumb { width: 20px; height: 20px; background: var(--black); border: none; border-radius: 0; cursor: pointer; }
+  .quiz-scale__labels { display: flex; justify-content: space-between; margin-top: 12px; }
+  .quiz-scale__labels span { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey-soft); }
+  .quiz-scale__value { text-align: center; font-size: 24px; font-weight: 500; letter-spacing: 0.1em; margin-top: 16px; color: var(--black); }
+
+  .quiz-nav { display: flex; align-items: center; justify-content: space-between; padding-top: 40px; border-top: 1px solid var(--grey-mid); }
+  .quiz-btn { display: inline-block; padding: 16px 40px; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; font-family: 'Futura', 'Century Gothic', sans-serif; font-weight: 500; cursor: pointer; transition: background var(--transition), color var(--transition), border-color var(--transition); border: none; }
+  .quiz-btn--primary { background: var(--black); color: var(--white); border: 1px solid var(--black); }
+  .quiz-btn--primary:hover { background: var(--white); color: var(--black); }
+  .quiz-btn--primary:disabled { opacity: 0.3; cursor: not-allowed; background: var(--black); color: var(--white); }
+  .quiz-btn--ghost { background: transparent; color: #999; border: 1px solid var(--grey-mid); }
+  .quiz-btn--ghost:hover { color: var(--black); border-color: var(--black); }
+
+  /* ---- RESULTS ---- */
+  #quiz-results { display: none; animation: fadeUp 0.7s ease both; }
+  .results__header { border-bottom: 1px solid var(--grey-mid); padding-bottom: 60px; margin-bottom: 60px; }
+  .results__eyebrow { font-size: 10px; letter-spacing: 0.32em; color: var(--grey-soft); text-transform: uppercase; display: block; margin-bottom: 24px; }
+  .results__profile-name { font-size: clamp(28px, 4.5vw, 52px); letter-spacing: 0.1em; font-weight: 500; margin-bottom: 20px; line-height: 1.1; }
+  .results__profile-desc { font-size: 15px; line-height: 1.95; color: #5a5a5a; max-width: 620px; font-weight: 300; }
+
+  .results__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+  .results__block-label { font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--grey-soft); margin-bottom: 28px; display: block; padding-bottom: 16px; border-bottom: 1px solid var(--grey-mid); }
+  .results__concerns { list-style: none; }
+  .results__concerns li { font-size: 13px; letter-spacing: 0.08em; font-weight: 300; padding: 12px 0; border-bottom: 1px solid var(--grey-mid); color: #4a4a4a; display: flex; align-items: center; gap: 12px; }
+  .results__concerns li::before { content: ''; width: 4px; height: 4px; background: var(--black); display: block; flex-shrink: 0; }
+
+  .results__families { margin-bottom: 60px; }
+  .results__families-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--grey-mid); border: 1px solid var(--grey-mid); margin-top: 28px; }
+  .results__family-block { background: var(--white); padding: 32px 28px; }
+  .results__family-block-title { font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; font-weight: 500; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--grey-mid); }
+  .results__family-step { display: flex; align-items: baseline; gap: 14px; margin-bottom: 14px; font-size: 13px; font-weight: 300; color: #4a4a4a; letter-spacing: 0.04em; }
+  .results__family-step-num { font-size: 10px; color: var(--grey-soft); letter-spacing: 0.2em; min-width: 20px; }
+
+  .results__categories { border: 1px solid var(--grey-mid); margin-top: 28px; }
+  .results__category { padding: 24px 28px; border-bottom: 1px solid var(--grey-mid); display: flex; align-items: flex-start; gap: 24px; }
+  .results__category:last-child { border-bottom: none; }
+  .results__category-name { font-size: 12px; letter-spacing: 0.22em; font-weight: 500; text-transform: uppercase; min-width: 200px; }
+  .results__category-desc { font-size: 13px; font-weight: 300; color: #6a6a6a; line-height: 1.7; letter-spacing: 0.04em; }
+
+  /* ---- CTA RÉSULTATS ---- */
+  .results__cta-block {
+    margin-top: 60px;
+    padding: 48px;
+    border: 1px solid var(--grey-mid);
+    background: var(--grey-light);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .results__cta-label {
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--grey-soft);
+    display: block;
+  }
+  .results__cta-title {
+    font-size: clamp(18px, 2.5vw, 24px);
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    color: var(--black);
+  }
+  .results__cta-desc {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #6a6a6a;
+    font-weight: 300;
+    max-width: 520px;
+  }
+  .results__cta-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 18px 52px;
+    background: var(--black);
+    color: var(--white);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--black);
+    font-family: 'Futura', 'Century Gothic', sans-serif;
+    font-weight: 500;
+    transition: background var(--transition), color var(--transition);
+  }
+  .results__cta-btn:hover { background: var(--white); color: var(--black); }
+
+  .results__restart { margin-top: 28px; padding-top: 40px; border-top: 1px solid var(--grey-mid); display: flex; align-items: center; gap: 20px; }
+  .results__restart p { font-size: 13px; color: var(--grey-soft); font-weight: 300; letter-spacing: 0.06em; }
+
+  /* ---- NAVBAR ---- */
+  .ep-nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: #ffffff;
+    border-bottom: 1px solid var(--grey-mid);
+    height: 64px;
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.3s ease;
+  }
+  .ep-nav.scrolled { box-shadow: 0 1px 12px rgba(0,0,0,0.06); }
+  .ep-nav__inner {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .ep-nav__logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+  .ep-nav__logo img { height: 20px; width: auto; display: block; filter: brightness(0); }
+  .ep-nav__divider { width: 1px; height: 20px; background: var(--grey-mid); flex-shrink: 0; }
+  .ep-nav__context { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--grey-soft); white-space: nowrap; flex: 1; }
+  .ep-nav__actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+  .ep-nav__btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 20px;
+    font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
+    font-family: 'Futura', 'Century Gothic', 'Trebuchet MS', sans-serif; font-weight: 500;
+    cursor: pointer; text-decoration: none; white-space: nowrap;
+    border: 1px solid var(--black); background: var(--black); color: var(--white);
+    transition: background var(--transition), color var(--transition);
+  }
+  .ep-nav__btn:hover { background: var(--white); color: var(--black); }
+  .ep-nav__btn--ghost { background: transparent; color: var(--black); border-color: var(--grey-mid); }
+  .ep-nav__btn--ghost:hover { border-color: var(--black); background: transparent; }
+  @media (max-width: 520px) {
+    .ep-nav__inner { padding: 0 20px; }
+    .ep-nav__context { display: none; }
+    .ep-nav__divider { display: none; }
+    .ep-nav__btn { padding: 8px 14px; font-size: 9px; }
+  }
+
+  /* ---- ANIMATIONS ---- */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes pulse-ring { 0% { r: 4; opacity: 0.6; } 50% { r: 7; opacity: 0.2; } 100% { r: 4; opacity: 0.6; } }
+
+  .pulse-dot circle.ring { animation: pulse-ring 2.5s ease-in-out infinite; }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 860px) {
+    .container { padding: 0 24px; }
+    .hero__deco { display: none; }
+    .intro__grid { grid-template-columns: 1fr; gap: 32px; }
+    .families__grid { grid-template-columns: 1fr 1fr; }
+    .pulse-detail-grid { grid-template-columns: 1fr 1fr; }
+    .pulse-legend { grid-template-columns: 1fr; }
+    .application__steps { grid-template-columns: 1fr; }
+    .application__col:first-child { padding-right: 0; border-right: none; padding-bottom: 40px; border-bottom: 1px solid var(--grey-mid); }
+    .application__col:last-child  { padding-left: 0; }
+    .pyramid__grid { grid-template-columns: 1fr 1fr; }
+    .quiz-options { grid-template-columns: 1fr; }
+    .quiz-options--three { grid-template-columns: 1fr; }
+    .results__grid { grid-template-columns: 1fr; gap: 40px; }
+    .results__families-grid { grid-template-columns: 1fr; }
+    .results__category { flex-direction: column; gap: 8px; }
+    .results__category-name { min-width: unset; }
+    .results__cta-block { padding: 32px 24px; }
+  }
+
+  @media (max-width: 520px) {
+    .families__grid { grid-template-columns: 1fr; }
+    .pyramid__grid { grid-template-columns: 1fr; }
+    .pulse-detail-grid { grid-template-columns: 1fr; }
+    .hero { min-height: 70vh; }
+    .quiz-nav { flex-direction: column-reverse; gap: 12px; align-items: stretch; }
+    .quiz-btn { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="ep-nav" id="ep-nav">
+  <div class="ep-nav__inner">
+    <a class="ep-nav__logo" href="https://www.eldoraprime.com" title="Eldora Prime">
+      <span style="font-family: 'Futura', 'Century Gothic', 'Trebuchet MS', sans-serif; font-size: 15px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #1a1a1a;">ELD&#216;RA PRIME</span>
+    </a>
+    <div class="ep-nav__divider"></div>
+    <span class="ep-nav__context">Guide Olfactif</span>
+    <div class="ep-nav__actions">
+      <a class="ep-nav__btn ep-nav__btn--ghost" href="https://www.eldoraprime.com/category/parfums">
+        <i class="ti ti-arrow-left" style="font-size:13px;" aria-hidden="true"></i>
+        Boutique
+      </a>
+      <a class="ep-nav__btn" href="#quiz">Diagnostic</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__deco"></div>
+  <div class="container">
+    <div class="hero__content">
+      <span class="hero__eyebrow">Art &amp; Expertise Olfactive</span>
+      <h1 class="hero__title">Votre Parfum,<em>votre signature.</em></h1>
+      <p class="hero__subtitle">Un guide expert pour comprendre la parfumerie, maîtriser l'art de l'application et découvrir le jus qui vous correspond profondément.</p>
+      <a href="#quiz" class="hero__cta">Commencer le diagnostic</a>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="container">
+    <span class="intro__label">Notre approche</span>
+    <h2 class="intro__heading reveal">Comprendre le parfum avant de le choisir</h2>
+    <div class="intro__grid reveal">
+      <div class="intro__col">
+        <p>Un parfum n'est pas un accessoire comme les autres. Il s'inscrit dans la chimie unique de chaque peau, interagit avec la chaleur corporelle, évolue au fil des heures et laisse une empreinte mémorielle durable. Choisir son parfum demande méthode, patience et connaissance de soi.</p>
+        <p style="margin-top:20px;">Avant d'acquérir un flacon, il est essentiel de comprendre les familles olfactives, les notes de composition et la façon dont votre peau amplifie ou transforme un accord. Ce guide vous donne les clés pour décider avec discernement.</p>
+      </div>
+      <div class="intro__col">
+        <p>L'application d'un parfum est un geste précis qui conditionne sa diffusion, sa tenue et sa fidélité à sa véritable nature. Un même jus appliqué différemment peut révéler des facettes radicalement opposées.</p>
+        <p style="margin-top:20px;">Ce guide s'appuie sur les principes reconnus de la parfumerie professionnelle et les conseils des grands ateliers de création. Il constitue un socle de connaissance, non un avis médical ou dermatologique.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OLFACTIVE FAMILIES -->
+<section class="families">
+  <div class="container">
+    <span class="section__label reveal">Les familles olfactives</span>
+    <h2 class="section__heading reveal">Quatre grandes orientations</h2>
+    <div class="families__grid reveal">
+      <div class="family-card">
+        <span class="family-card__number">01</span>
+        <h3 class="family-card__name">Floral</h3>
+        <p class="family-card__desc">Famille la plus répandue en parfumerie féminine. Elle célèbre les essences de fleurs — rose, jasmin, muguet, pivoine — dans des accords solos (soliflore) ou des bouquets complexes. Du plus poudré au plus vert.</p>
+      </div>
+      <div class="family-card">
+        <span class="family-card__number">02</span>
+        <h3 class="family-card__name">Oriental</h3>
+        <p class="family-card__desc">Accords chauds, sensuels, épicés ou boisés. Ambre, benjoin, musc, vanille et résines composent une sillage enveloppante et mémorable. Idéaux pour les soirées et les saisons froides.</p>
+      </div>
+      <div class="family-card">
+        <span class="family-card__number">03</span>
+        <h3 class="family-card__name">Boisé</h3>
+        <p class="family-card__desc">Cèdre, santal, vétiver, patchouli, oud. Ces essences racées et terreuses confèrent au parfum une profondeur et une sophistication affirmées. Famille mixte par excellence, portée par tous les genres.</p>
+      </div>
+      <div class="family-card">
+        <span class="family-card__number">04</span>
+        <h3 class="family-card__name">Hespéridé & Frais</h3>
+        <p class="family-card__desc">Bergamote, citron, néroli, thé vert, aquatiques. Ces fragrances légères et dynamiques offrent une fraîcheur immédiate. Parfaits pour la journée, les contextes professionnels et les saisons chaudes.</p>
+      </div>
+    </div>
+    <div class="families__grid reveal" style="margin-top:1px;">
+      <div class="family-card">
+        <span class="family-card__number">05</span>
+        <h3 class="family-card__name">Chypré</h3>
+        <p class="family-card__desc">Architecture fondée sur la triade bergamote-labdanum-mousse de chêne. Accords élégants, complexes, à la longueur remarquable. Une des structures les plus nobles de la parfumerie classique.</p>
+      </div>
+      <div class="family-card">
+        <span class="family-card__number">06</span>
+        <h3 class="family-card__name">Fougère</h3>
+        <p class="family-card__desc">Accord lavande-coumarine-mousse de chêne. Famille historiquement masculine, aujourd'hui réinterprétée dans des créations mixtes. Frais, herbacé, légèrement boisé et toujours élégant.</p>
+      </div>
+      <div class="family-card">
+        <span class="family-card__number">07</span>
+        <h3 class="family-card__name">Gourmand</h3>
+        <p class="family-card__desc">Accords comestibles et addictifs : caramel, chocolat, café, praline, miel. Souvent associés à la vanille et au musc blanc. Une catégorie née dans les années 90, aujourd'hui incontournable.</p>
+      </div>
+      <div class="family-card">
+        <span class="family-card__number">08</span>
+        <h3 class="family-card__name">Aromatique</h3>
+        <p class="family-card__desc">Herbes fraîches, plantes médicinales — romarin, basilic, menthe, thym — associées à des bois ou des notes vertes. Précis, naturels, souvent unisexes, ces parfums évoquent les jardins et les herboristeries.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PULSE POINTS DIAGRAM -->
+<section class="pulse-section" id="pulse">
+  <div class="container">
+    <div class="pulse-intro">
+      <span class="section__label reveal">Art de l'application</span>
+      <h2 class="section__heading reveal">Les points de pulsation</h2>
+      <p class="reveal">Les points de pulsation sont les zones du corps où les vaisseaux sanguins affleurent la surface cutanée, générant une chaleur naturelle qui active et sublime les molécules olfactives. Leur choix conditionne la tenue, la projection et l'évolution du parfum dans le temps.</p>
+    </div>
+
+    <div class="pulse-svg-wrap reveal">
+      <svg id="pulse-svg" viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;display:block;margin:0 auto;">
+        <style>
+          .pd-fig     { fill: #e4e4ea; }
+          .pd-line    { stroke: #c0bdb8; stroke-width: 0.8; fill: none; }
+          .pd-dot-bg  { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.2; }
+          .pd-dot-ctr { fill: #1a1a1a; }
+          .pd-dot-ring { fill: none; stroke: #7a8a8a; stroke-width: 1; opacity: 0; }
+          .pd-dot-g   { cursor: pointer; }
+          .pd-dot-g:hover .pd-dot-bg  { stroke: #7a8a8a; }
+          .pd-dot-g:hover .pd-dot-ctr { fill: #7a8a8a; }
+          .pd-dot-g:hover .pd-dot-ring { opacity: 1; }
+          .pd-title     { font-family: 'Futura','Century Gothic',sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; fill: #1a1a1a; }
+        </style>
+        <circle class="pd-fig" cx="440" cy="42" r="32"/>
+        <rect class="pd-fig" x="429" y="73" width="22" height="20" rx="8"/>
+        <rect class="pd-fig" x="396" y="91" width="88" height="145" rx="20"/>
+        <rect class="pd-fig" x="364" y="94" width="26" height="95" rx="13"/>
+        <rect class="pd-fig" x="364" y="195" width="26" height="82" rx="13"/>
+        <rect class="pd-fig" x="490" y="94" width="26" height="95" rx="13"/>
+        <rect class="pd-fig" x="490" y="195" width="26" height="82" rx="13"/>
+        <rect class="pd-fig" x="398" y="232" width="38" height="245" rx="16"/>
+        <rect class="pd-fig" x="444" y="232" width="38" height="245" rx="16"/>
+        <polyline class="pd-line" points="413,14 300,14 220,14"/>
+        <polyline class="pd-line" points="410,42 300,42 220,42"/>
+        <polyline class="pd-line" points="429,83 300,83 220,83"/>
+        <polyline class="pd-line" points="396,148 300,148 220,148"/>
+        <polyline class="pd-line" points="529,237 640,237 660,237"/>
+        <polyline class="pd-line" points="529,277 640,277 660,277"/>
+        <polyline class="pd-line" points="482,380 610,380 660,380"/>
+        <g class="pd-dot-g" id="pdg-hair"><circle class="pd-dot-bg" cx="440" cy="14" r="8"/><circle class="pd-dot-ctr" cx="440" cy="14" r="3"/><circle class="pd-dot-ring" cx="440" cy="14" r="12"/></g>
+        <g class="pd-dot-g" id="pdg-temple"><circle class="pd-dot-bg" cx="410" cy="42" r="8"/><circle class="pd-dot-ctr" cx="410" cy="42" r="3"/><circle class="pd-dot-ring" cx="410" cy="42" r="12"/><circle class="pd-dot-bg" cx="470" cy="42" r="8"/><circle class="pd-dot-ctr" cx="470" cy="42" r="3"/><circle class="pd-dot-ring" cx="470" cy="42" r="12"/></g>
+        <g class="pd-dot-g" id="pdg-neck"><circle class="pd-dot-bg" cx="440" cy="83" r="8"/><circle class="pd-dot-ctr" cx="440" cy="83" r="3"/><circle class="pd-dot-ring" cx="440" cy="83" r="12"/></g>
+        <g class="pd-dot-g" id="pdg-chest"><circle class="pd-dot-bg" cx="440" cy="148" r="8"/><circle class="pd-dot-ctr" cx="440" cy="148" r="3"/><circle class="pd-dot-ring" cx="440" cy="148" r="12"/></g>
+        <g class="pd-dot-g" id="pdg-elbow"><circle class="pd-dot-bg" cx="376" cy="195" r="8"/><circle class="pd-dot-ctr" cx="376" cy="195" r="3"/><circle class="pd-dot-ring" cx="376" cy="195" r="12"/><circle class="pd-dot-bg" cx="503" cy="195" r="8"/><circle class="pd-dot-ctr" cx="503" cy="195" r="3"/><circle class="pd-dot-ring" cx="503" cy="195" r="12"/></g>
+        <g class="pd-dot-g" id="pdg-wrist"><circle class="pd-dot-bg" cx="376" cy="270" r="8"/><circle class="pd-dot-ctr" cx="376" cy="270" r="3"/><circle class="pd-dot-ring" cx="376" cy="270" r="12"/><circle class="pd-dot-bg" cx="503" cy="270" r="8"/><circle class="pd-dot-ctr" cx="503" cy="270" r="3"/><circle class="pd-dot-ring" cx="503" cy="270" r="12"/></g>
+        <g class="pd-dot-g" id="pdg-knee"><circle class="pd-dot-bg" cx="417" cy="380" r="8"/><circle class="pd-dot-ctr" cx="417" cy="380" r="3"/><circle class="pd-dot-ring" cx="417" cy="380" r="12"/><circle class="pd-dot-bg" cx="463" cy="380" r="8"/><circle class="pd-dot-ctr" cx="463" cy="380" r="3"/><circle class="pd-dot-ring" cx="463" cy="380" r="12"/></g>
+        <text class="pd-title" x="212" y="18" text-anchor="end">Cheveux</text>
+        <text class="pd-title" x="212" y="46" text-anchor="end">Tempes</text>
+        <text class="pd-title" x="212" y="87" text-anchor="end">Cou &amp; Nuque</text>
+        <text class="pd-title" x="212" y="152" text-anchor="end">Décolleté</text>
+        <text class="pd-title" x="668" y="241" text-anchor="start">Creux du Coude</text>
+        <text class="pd-title" x="668" y="281" text-anchor="start">Poignets</text>
+        <text class="pd-title" x="668" y="384" text-anchor="start">Creux des Genoux</text>
+      </svg>
+    </div>
+
+    <div class="pulse-detail-grid reveal">
+      <div class="pulse-detail-card" data-target="pdg-hair">
+        <div class="pulse-detail-card__header"><span class="pulse-detail-card__num">01</span><h4 class="pulse-detail-card__name">Cheveux</h4><span class="pulse-detail-card__badge">Diffus</span></div>
+        <p class="pulse-detail-card__text">La kératine fixe et libère les molécules olfactives sur la durée. Les cheveux offrent une diffusion prolongée et enveloppante. Éviter l'alcool direct au contact — vaporiser dans l'air et passer les mèches dans le nuage.</p>
+      </div>
+      <div class="pulse-detail-card" data-target="pdg-temple">
+        <div class="pulse-detail-card__header"><span class="pulse-detail-card__num">02</span><h4 class="pulse-detail-card__name">Tempes</h4><span class="pulse-detail-card__badge">Discret</span></div>
+        <p class="pulse-detail-card__text">Peau fine et vascularisée, les tempes offrent une chaleur douce et constante. Elles révèlent en priorité les têtes de note légères et les accords floraux aériens. Zone idéale pour les fragrances discrètes portées au quotidien.</p>
+      </div>
+      <div class="pulse-detail-card" data-target="pdg-neck">
+        <div class="pulse-detail-card__header"><span class="pulse-detail-card__num">03</span><h4 class="pulse-detail-card__name">Cou &amp; Nuque</h4><span class="pulse-detail-card__badge">Intense</span></div>
+        <p class="pulse-detail-card__text">Zone royale de la parfumerie. La chaleur est constante, la peau très fine. Chaque mouvement libère une nouvelle vague olfactive. Idéale pour tous types de parfums, des plus légers aux plus denses.</p>
+      </div>
+      <div class="pulse-detail-card" data-target="pdg-chest">
+        <div class="pulse-detail-card__header"><span class="pulse-detail-card__num">04</span><h4 class="pulse-detail-card__name">Décolleté</h4><span class="pulse-detail-card__badge">Optimal</span></div>
+        <p class="pulse-detail-card__text">La chaleur naturelle du sternum est puissante et constante. La diffusion ascendante crée une sillage généreuse. Zone privilégiée pour les parfums de caractère et les compositions chaleureuses.</p>
+      </div>
+      <div class="pulse-detail-card" data-target="pdg-wrist">
+        <div class="pulse-detail-card__header"><span class="pulse-detail-card__num">05</span><h4 class="pulse-detail-card__name">Poignets</h4><span class="pulse-detail-card__badge">Optimal</span></div>
+        <p class="pulse-detail-card__text">Point de pulsation classique et accessible. Chaleur vive, peau très fine. Règle absolue : ne jamais frotter les poignets l'un contre l'autre — le frottement brise les molécules et écrase les têtes de note.</p>
+      </div>
+      <div class="pulse-detail-card" data-target="pdg-elbow">
+        <div class="pulse-detail-card__header"><span class="pulse-detail-card__num">06</span><h4 class="pulse-detail-card__name">Creux du Coude</h4><span class="pulse-detail-card__badge">Modéré</span></div>
+        <p class="pulse-detail-card__text">Peau douce et fine, chaleur modérée. Excellente zone pour révéler les notes de cœur et de fond d'un parfum complexe. La chaleur s'accumule naturellement lors du mouvement du bras.</p>
+      </div>
+      <div class="pulse-detail-card" data-target="pdg-knee">
+        <div class="pulse-detail-card__header"><span class="pulse-detail-card__num">07</span><h4 class="pulse-detail-card__name">Creux des Genoux</h4><span class="pulse-detail-card__badge">Intimiste</span></div>
+        <p class="pulse-detail-card__text">Zone intimiste par excellence. La chaleur s'accumule à la marche, créant une diffusion montante légère. Particulièrement adaptée aux parfums denses, orientaux ou boisés lors de soirées.</p>
+      </div>
+    </div>
+
+    <div class="pulse-legend reveal" style="margin-top: 60px;">
+      <div class="pulse-legend-item">
+        <span class="pulse-legend-item__label">Règle essentielle</span>
+        <h4 class="pulse-legend-item__title">Ne jamais frotter</h4>
+        <p class="pulse-legend-item__text">Le frottement des poignets est une erreur répandue. Il génère une chaleur mécanique qui dégrade les molécules aromatiques et accélère l'évaporation des têtes de note, réduisant la complexité du parfum.</p>
+      </div>
+      <div class="pulse-legend-item">
+        <span class="pulse-legend-item__label">Technique professionnelle</span>
+        <h4 class="pulse-legend-item__title">La bonne distance</h4>
+        <p class="pulse-legend-item__text">Tenir le flacon à 15 à 20 cm de la peau pour une diffusion homogène. Un vaporisateur trop proche concentre le produit et empêche la dispersion optimale des molécules dans l'air.</p>
+      </div>
+      <div class="pulse-legend-item">
+        <span class="pulse-legend-item__label">Astuce experte</span>
+        <h4 class="pulse-legend-item__title">Le nuage olfactif</h4>
+        <p class="pulse-legend-item__text">Vaporiser le parfum dans l'air et traverser le nuage répartit le parfum uniformément sur les vêtements et les cheveux. Idéal pour les fragrances intenses ou les matières textiles délicates.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION CONSEILS -->
+<section class="application">
+  <div class="container">
+    <span class="section__label reveal">Maîtriser son parfum</span>
+    <h2 class="section__heading reveal">L'art de l'application et de la conservation</h2>
+    <div class="application__steps reveal">
+      <div class="application__col">
+        <span class="application__col-label">Comment bien l'appliquer</span>
+        <div class="application__step"><span class="application__step-num">01</span><div><h4 class="application__step-name">Hydrater la peau avant</h4><p class="application__step-desc">Un parfum tient plus longtemps sur une peau hydratée. Appliquer un soin neutre (crème non parfumée ou huile légère) avant le parfum améliore significativement la fixation et la durée de diffusion.</p></div></div>
+        <div class="application__step"><span class="application__step-num">02</span><div><h4 class="application__step-name">Cibler les points chauds</h4><p class="application__step-desc">Vaporiser sur les zones de pulsation — nuque, décolleté, poignets, creux des coudes. La chaleur cutanée active les molécules et assure une diffusion progressive tout au long de la journée.</p></div></div>
+        <div class="application__step"><span class="application__step-num">03</span><div><h4 class="application__step-name">Laisser sécher naturellement</h4><p class="application__step-desc">Ne jamais frotter. Laisser le parfum s'évaporer naturellement. Le séchage spontané préserve l'intégralité de la pyramide olfactive, du pétillant des têtes à la chaleur des fonds.</p></div></div>
+        <div class="application__step"><span class="application__step-num">04</span><div><h4 class="application__step-name">Doser avec parcimonie</h4><p class="application__step-desc">2 à 3 vaporisations suffisent. L'adaptation olfactive peut pousser à surdoser. L'entourage, lui, continue de le percevoir pleinement.</p></div></div>
+      </div>
+      <div class="application__col">
+        <span class="application__col-label">Comment le conserver</span>
+        <div class="application__step"><span class="application__step-num">01</span><div><h4 class="application__step-name">À l'abri de la lumière</h4><p class="application__step-desc">La lumière UV dégrade les molécules olfactives et altère la couleur du jus. Conserver le flacon dans son étui d'origine ou dans un meuble fermé, loin de toute exposition directe.</p></div></div>
+        <div class="application__step"><span class="application__step-num">02</span><div><h4 class="application__step-name">Loin de la chaleur et de l'humidité</h4><p class="application__step-desc">La salle de bain est l'ennemi des parfums. La chaleur, la vapeur et les variations hygrométriques accélèrent l'oxydation. Préférer une pièce à température stable.</p></div></div>
+        <div class="application__step"><span class="application__step-num">03</span><div><h4 class="application__step-name">Éviter le contact avec l'air</h4><p class="application__step-desc">Toujours recapuchonner le flacon après usage. L'oxydation à l'air altère les notes de tête fragiles. Pour les grands flacons, un atomiseur de voyage réduit les ouvertures du flacon principal.</p></div></div>
+        <div class="application__step"><span class="application__step-num">04</span><div><h4 class="application__step-name">Ne pas agiter</h4><p class="application__step-desc">Agiter un flacon de parfum incorpore des bulles d'air qui favorisent l'oxydation. Manipuler le flacon avec douceur.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTES PYRAMID -->
+<section class="pyramid-section">
+  <div class="container">
+    <div class="pyramid-intro">
+      <span class="section__label reveal">La pyramide olfactive</span>
+      <h2 class="section__heading reveal">Les trois strates d'un parfum</h2>
+      <p class="reveal">Un parfum se déploie dans le temps selon trois couches successives. Comprendre cette évolution permet de juger un parfum avec justesse — sur peau, et non sur papier — et d'éviter les décisions d'achat prises à chaud sur les seules têtes de note.</p>
+    </div>
+    <div class="pyramid__grid reveal">
+      <div class="pyramid-card">
+        <span class="pyramid-card__label">Strate I — Têtes</span>
+        <h4 class="pyramid-card__name">Notes de tête</h4>
+        <span class="pyramid-card__duration">Durée : 15 à 30 minutes</span>
+        <p class="pyramid-card__desc">Première impression du parfum, immédiate et éphémère. Ces molécules légères s'évaporent rapidement et donnent le caractère initial. Elles ne représentent pas l'essence réelle du parfum.</p>
+        <p class="pyramid-card__examples">Agrumes, aromates, notes aquatiques, légèreté florale</p>
+      </div>
+      <div class="pyramid-card">
+        <span class="pyramid-card__label">Strate II — Cœur</span>
+        <h4 class="pyramid-card__name">Notes de cœur</h4>
+        <span class="pyramid-card__duration">Durée : 2 à 4 heures</span>
+        <p class="pyramid-card__desc">L'identité profonde du parfum. Ces notes constituent le thème principal de la composition. C'est à ce stade qu'on évalue vraiment un parfum. La chaleur de la peau les révèle pleinement.</p>
+        <p class="pyramid-card__examples">Rose, jasmin, ylang-ylang, épices douces, iris, pivoine</p>
+      </div>
+      <div class="pyramid-card">
+        <span class="pyramid-card__label">Strate III — Fonds</span>
+        <h4 class="pyramid-card__name">Notes de fond</h4>
+        <span class="pyramid-card__duration">Durée : 6 à 24 heures</span>
+        <p class="pyramid-card__desc">La signature finale du parfum, sa sillage mémorielle. Riches en molécules lourdes et persistantes, ces notes s'ancrent dans la peau et constituent l'empreinte durable laissée sur les vêtements.</p>
+        <p class="pyramid-card__examples">Santal, vétiver, ambre, musc, oud, vanille, résines</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz-section" id="quiz">
+  <div class="container">
+    <div class="quiz-intro" id="quiz-intro">
+      <span class="section__label">Diagnostic olfactif</span>
+      <h2 class="section__heading">Votre profil de parfum</h2>
+      <p>Répondez à ces questions avec soin. Vos réponses permettront d'identifier votre profil olfactif, de vous orienter vers les familles qui vous correspondent et de vous proposer des conseils d'application personnalisés.</p>
+    </div>
+
+    <div id="quiz-form">
+      <div class="quiz-progress" id="quiz-progress">
+        <span class="quiz-progress__label" id="progress-label">Question 1 / 9</span>
+        <div class="quiz-progress__bar"><div class="quiz-progress__fill" id="progress-fill"></div></div>
+      </div>
+
+      <!-- Q1 -->
+      <div class="quiz-question active" data-question="1" data-key="universe">
+        <span class="quiz-question__number">01 / 09</span>
+        <h3 class="quiz-question__text">Quel univers sensoriel vous attire le plus spontanément ?</h3>
+        <p class="quiz-question__hint">Ne cherchez pas à analyser — faites confiance à votre première réaction.</p>
+        <div class="quiz-options">
+          <label class="quiz-option" data-value="nature"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>La nature sauvage</strong>Forêts après la pluie, terre humide, herbe fraîche, air iodé du bord de mer.</span></label>
+          <label class="quiz-option" data-value="flowers"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Les fleurs et jardins</strong>Rose en plein épanouissement, jasmin au crépuscule, muguet du matin.</span></label>
+          <label class="quiz-option" data-value="spice"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Les épices et marchés</strong>Vieilles boutiques, encens, épices chaudes, souk oriental, fumée de bois.</span></label>
+          <label class="quiz-option" data-value="skin"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>La chaleur de la peau</strong>Musc doux, poudre de riz, crèmes légères, intimité et confort.</span></label>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn quiz-btn--ghost" onclick="prevQuestion()" disabled>Précédent</button>
+          <button class="quiz-btn quiz-btn--primary" onclick="nextQuestion()" disabled>Suivant</button>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="quiz-question" data-question="2" data-key="intensity">
+        <span class="quiz-question__number">02 / 09</span>
+        <h3 class="quiz-question__text">Quelle intensité de sillage recherchez-vous au quotidien ?</h3>
+        <p class="quiz-question__hint">Le sillage est la traîne olfactive que vous laissez dans votre passage.</p>
+        <div class="quiz-options quiz-options--three">
+          <label class="quiz-option" data-value="light"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Discret</strong>Perceptible uniquement à proximité. Une présence intime et personnelle.</span></label>
+          <label class="quiz-option" data-value="moderate"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Modéré</strong>Présent mais jamais envahissant. Élégance dans la mesure.</span></label>
+          <label class="quiz-option" data-value="bold"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Affirmé</strong>Une sillage remarquable. Le parfum fait partie de l'entrée en scène.</span></label>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn quiz-btn--ghost" onclick="prevQuestion()">Précédent</button>
+          <button class="quiz-btn quiz-btn--primary" onclick="nextQuestion()" disabled>Suivant</button>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="quiz-question" data-question="3" data-key="season">
+        <span class="quiz-question__number">03 / 09</span>
+        <h3 class="quiz-question__text">Pour quelle saison ou occasion cherchez-vous principalement un parfum ?</h3>
+        <p class="quiz-question__hint">Les molécules olfactives se comportent différemment selon la chaleur ambiante.</p>
+        <div class="quiz-options">
+          <label class="quiz-option" data-value="summer"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Été & Chaleur</strong>Journées chaudes, fêtes, voyages. Besoin de fraîcheur et légèreté.</span></label>
+          <label class="quiz-option" data-value="winter"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Automne & Hiver</strong>Froids, soirées, manteaux. Besoin de chaleur et de profondeur.</span></label>
+          <label class="quiz-option" data-value="work"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Usage Professionnel</strong>Bureau, réunions, contextes formels. Discrétion et sophistication.</span></label>
+          <label class="quiz-option" data-value="evening"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Soirées & Événements</strong>Dîners, sorties, occasions spéciales. Présence et séduction.</span></label>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn quiz-btn--ghost" onclick="prevQuestion()">Précédent</button>
+          <button class="quiz-btn quiz-btn--primary" onclick="nextQuestion()" disabled>Suivant</button>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="quiz-question" data-question="4" data-key="skin_type">
+        <span class="quiz-question__number">04 / 09</span>
+        <h3 class="quiz-question__text">Comment décririez-vous votre type de peau ?</h3>
+        <p class="quiz-question__hint">La chimie cutanée influence fortement l'évolution d'un parfum sur la journée.</p>
+        <div class="quiz-options">
+          <label class="quiz-option" data-value="dry"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Sèche</strong>Tiraillements fréquents. Les parfums tiennent moins longtemps et s'évaporent vite.</span></label>
+          <label class="quiz-option" data-value="oily"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Grasse</strong>Légères brillances. Les parfums tiennent exceptionnellement bien et peuvent s'intensifier.</span></label>
+          <label class="quiz-option" data-value="normal"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Normale</strong>Équilibrée. Le parfum évolue fidèlement à sa composition initiale.</span></label>
+          <label class="quiz-option" data-value="sensitive"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Sensible ou réactive</strong>Attention aux compositions chargées. Préférer les accords naturels et épurés.</span></label>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn quiz-btn--ghost" onclick="prevQuestion()">Précédent</button>
+          <button class="quiz-btn quiz-btn--primary" onclick="nextQuestion()" disabled>Suivant</button>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="quiz-question" data-question="5" data-key="personality">
+        <span class="quiz-question__number">05 / 09</span>
+        <h3 class="quiz-question__text">Quelle facette de votre personnalité aimeriez-vous que votre parfum exprime ?</h3>
+        <p class="quiz-question__hint">Un parfum est une extension de l'identité, pas simplement un accessoire olfactif.</p>
+        <div class="quiz-options quiz-options--three">
+          <label class="quiz-option" data-value="seductive"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Séduisant(e)</strong>Sensualité, chaleur, mystère. Un parfum qui attire et intrigue.</span></label>
+          <label class="quiz-option" data-value="elegant"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Élégant(e)</strong>Raffinement, classicisme, distinction. La parfumerie comme signature sociale.</span></label>
+          <label class="quiz-option" data-value="free"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Libre & Naturel(le)</strong>Authenticité, nature, fraîcheur. Un parfum qui ne ressemble à aucune convention.</span></label>
+          <label class="quiz-option" data-value="bold"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Audacieux(se)</strong>Originalité, affirmation de soi. Un parfum qui provoque et ne laisse pas indifférent.</span></label>
+          <label class="quiz-option" data-value="soft"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Doux(ce) & Rassurant(e)</strong>Cocooning, familiarité, confort. La parfumerie comme second vêtement.</span></label>
+          <label class="quiz-option" data-value="dynamic"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Dynamique</strong>Énergie, vitalité, fraîcheur permanente. Un parfum qui accentue la présence.</span></label>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn quiz-btn--ghost" onclick="prevQuestion()">Précédent</button>
+          <button class="quiz-btn quiz-btn--primary" onclick="nextQuestion()" disabled>Suivant</button>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="quiz-question" data-question="6" data-key="avoid">
+        <span class="quiz-question__number">06 / 09</span>
+        <h3 class="quiz-question__text">Y a-t-il des notes ou accords qui vous déplaisent ou que vous souhaitez éviter ?</h3>
+        <p class="quiz-question__hint">Ces préférences négatives sont aussi importantes que les positives pour affiner votre choix.</p>
+        <div class="quiz-options quiz-options--three">
+          <label class="quiz-option" data-value="heavy"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Trop lourd</strong>Orients chargés, muscs capiteux, résines épaisses.</span></label>
+          <label class="quiz-option" data-value="sweet"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Trop sucré</strong>Vanille excessive, notes gourmandes, accords confiserie.</span></label>
+          <label class="quiz-option" data-value="chemical"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Trop chimique</strong>Muscs synthétiques, aldehydes, accords artificiels.</span></label>
+          <label class="quiz-option" data-value="flowery"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Trop fleuri</strong>Floraux capiteux, rose poudré, accords trop féminins ou vieillots.</span></label>
+          <label class="quiz-option" data-value="green"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Trop vert / végétal</strong>Notes herbeuses, sèves fraîches, accords trop naturels ou crus.</span></label>
+          <label class="quiz-option" data-value="none_avoid"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Aucune restriction</strong>Ouvert à toutes les familles olfactives et signatures.</span></label>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn quiz-btn--ghost" onclick="prevQuestion()">Précédent</button>
+          <button class="quiz-btn quiz-btn--primary" onclick="nextQuestion()" disabled>Suivant</button>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="quiz-question" data-question="7" data-key="longevity">
+        <span class="quiz-question__number">07 / 09</span>
+        <h3 class="quiz-question__text">Quelle durée de tenue est importante pour vous ?</h3>
+        <p class="quiz-question__hint">La concentration du parfum détermine sa longévité sur la peau.</p>
+        <div class="quiz-options">
+          <label class="quiz-option" data-value="short"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>2 à 4 heures</strong>Je réapplique volontiers. Je préfère un jus léger, Eau de Cologne ou Eau de Toilette légère.</span></label>
+          <label class="quiz-option" data-value="medium"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>4 à 6 heures</strong>Une journée de bureau. Eau de Toilette ou Eau de Parfum légère.</span></label>
+          <label class="quiz-option" data-value="long"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>6 à 12 heures</strong>Du matin au soir sans retouche. Eau de Parfum concentrée.</span></label>
+          <label class="quiz-option" data-value="very_long"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Plus de 12 heures</strong>Je veux une signature durable. Parfum ou Extrait de Parfum.</span></label>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn quiz-btn--ghost" onclick="prevQuestion()">Précédent</button>
+          <button class="quiz-btn quiz-btn--primary" onclick="nextQuestion()" disabled>Suivant</button>
+        </div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="quiz-question" data-question="8" data-key="budget">
+        <span class="quiz-question__number">08 / 09</span>
+        <h3 class="quiz-question__text">Dans quelle gamme souhaitez-vous explorer ?</h3>
+        <p class="quiz-question__hint">La qualité des matières premières influence directement la complexité et la tenue du parfum.</p>
+        <div class="quiz-options quiz-options--three">
+          <label class="quiz-option" data-value="accessible"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Accessible</strong>Grandes marques de distribution. Qualité standard, large choix.</span></label>
+          <label class="quiz-option" data-value="prestige"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Prestige</strong>Maisons de luxe établies. Qualité supérieure, matières premières sélectionnées.</span></label>
+          <label class="quiz-option" data-value="niche"><span class="quiz-option__check"></span><span class="quiz-option__label"><strong>Niche</strong>Maisons indépendantes et artisanales. Créativité, unicité, matières rares.</span></label>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn quiz-btn--ghost" onclick="prevQuestion()">Précédent</button>
+          <button class="quiz-btn quiz-btn--primary" onclick="nextQuestion()" disabled>Suivant</button>
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="quiz-question" data-question="9" data-key="sensitivity_level">
+        <span class="quiz-question__number">09 / 09</span>
+        <h3 class="quiz-question__text">À quel point êtes-vous sensible aux parfums forts ou chargés ?</h3>
+        <p class="quiz-question__hint">1 = Aucune sensibilité / 5 = Forte réactivité aux parfums intenses</p>
+        <div class="quiz-scale">
+          <div class="quiz-scale__track">
+            <input type="range" class="quiz-scale__input" id="sensitivity-scale" min="1" max="5" value="3"
+              oninput="answers['sensitivity_level']=parseInt(this.value); document.getElementById('sensitivity-value').textContent=this.value; enableNext()">
+          </div>
+          <div class="quiz-scale__labels"><span>Aucune sensibilité</span><span>Très sensible</span></div>
+          <div class="quiz-scale__value" id="sensitivity-value">3</div>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn quiz-btn--ghost" onclick="prevQuestion()">Précédent</button>
+          <button class="quiz-btn quiz-btn--primary" onclick="showResults()">Voir mon profil</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div id="quiz-results">
+      <div class="results__header">
+        <span class="results__eyebrow">Votre profil olfactif</span>
+        <h2 class="results__profile-name" id="result-name"></h2>
+        <p class="results__profile-desc" id="result-desc"></p>
+      </div>
+
+      <div class="results__grid">
+        <div>
+          <span class="results__block-label">Vos caractéristiques olfactives</span>
+          <ul class="results__concerns" id="result-chars"></ul>
+        </div>
+        <div>
+          <span class="results__block-label">Familles & accords recommandés</span>
+          <ul class="results__concerns" id="result-families"></ul>
+        </div>
+      </div>
+
+      <div class="results__families">
+        <span class="results__block-label">Conseils d'application personnalisés</span>
+        <div class="results__families-grid">
+          <div class="results__family-block">
+            <div class="results__family-block-title">Points de pulsation conseillés</div>
+            <div id="result-points"></div>
+          </div>
+          <div class="results__family-block">
+            <div class="results__family-block-title">Concentration recommandée</div>
+            <div id="result-concentration"></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <span class="results__block-label">Catégories à explorer</span>
+        <div class="results__categories" id="result-categories"></div>
+      </div>
+
+      <!-- CTA BLOC REDIRECTION -->
+      <div class="results__cta-block" id="result-cta-block">
+        <span class="results__cta-label">Découvrir la sélection</span>
+        <h3 class="results__cta-title" id="result-cta-title"></h3>
+        <p class="results__cta-desc" id="result-cta-desc"></p>
+        <a class="results__cta-btn" id="result-cta-link" href="#" target="_blank">Voir la sélection Eldora Prime</a>
+      </div>
+
+      <div class="results__restart">
+        <p>Ce diagnostic est indicatif. Testez toujours un parfum sur votre peau avant de l'adopter.</p>
+        <button class="quiz-btn quiz-btn--ghost" onclick="restartQuiz()">Recommencer</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const answers = { sensitivity_level: 3 };
+  let currentQuestion = 1;
+  const TOTAL = 9;
+
+  // Mapping familles olfactives -> catégories Eldora Prime
+  const CATEGORY_MAP = {
+    floral:   { url: 'https://www.eldoraprime.com/category/fleuries',                     label: 'Parfums Floraux',           desc: 'Roses, jasmins, muguets et bouquets raffinés. Des créations lumineuses et féminines qui capturent l\'essence même de la fleur.' },
+    fruity:   { url: 'https://www.eldoraprime.com/category/fruit%C3%A9es-gourmandes',     label: 'Fruités & Gourmands',       desc: 'Accords fruités, pétillants et gourmands pour une présence addictive et résolument moderne.' },
+    oriental: { url: 'https://www.eldoraprime.com/category/orientales',                   label: 'Parfums Orientaux',         desc: 'Ambre, épices et résines enveloppantes. Des compositions profondes et sensuelles pour les caractères affirmés.' },
+    woody:    { url: 'https://www.eldoraprime.com/category/bois%C3%A9es-%C3%A9pic%C3%A9es', label: 'Boisés & Épicés',         desc: 'Cèdre, santal, vétiver et patchouli. Une parfumerie de caractère, mixte et intemporelle.' },
+    fresh:    { url: 'https://www.eldoraprime.com/category/fra%C3%AEches-aquatiques',     label: 'Frais & Aquatiques',        desc: 'Hespéridés, thés verts et accords marins. Des fragrances légères et dynamisantes, idéales au quotidien.' }
+  };
+
+  function getCategoryFromProfile(universe, personality, season, avoid) {
+    // Oriental assumé
+    if (universe === 'spice') return 'oriental';
+    // Sensuel discret / musc / poudré -> floral (le plus proche sur le site)
+    if (universe === 'skin') {
+      if (avoid === 'flowery') return 'oriental';
+      return 'floral';
+    }
+    // Nature / explorateur
+    if (universe === 'nature') {
+      if (season === 'summer' || personality === 'dynamic') return 'fresh';
+      if (personality === 'seductive' || season === 'evening' || season === 'winter') return 'woody';
+      return 'fresh';
+    }
+    // Floral
+    if (universe === 'flowers') {
+      if (avoid === 'flowery') return 'fresh';
+      if (personality === 'seductive' || season === 'evening') return 'oriental';
+      return 'floral';
+    }
+    return 'floral';
+  }
+
+  function updateProgress() {
+    const pct = ((currentQuestion - 1) / TOTAL) * 100;
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('progress-label').textContent = 'Question ' + currentQuestion + ' / ' + TOTAL;
+  }
+
+  function enableNext() {
+    const q = document.querySelector('.quiz-question[data-question="' + currentQuestion + '"]');
+    if (!q) return;
+    const btns = q.querySelectorAll('.quiz-btn--primary');
+    const key = q.dataset.key;
+    const val = answers[key];
+    const isSlide = (key === 'sensitivity_level');
+    const filled = isSlide || (val !== undefined && val !== null);
+    btns.forEach(b => b.disabled = !filled);
+  }
+
+  function nextQuestion() {
+    const q = document.querySelector('.quiz-question.active');
+    if (!q) return;
+    const next = document.querySelector('.quiz-question[data-question="' + (currentQuestion + 1) + '"]');
+    if (!next) return;
+    q.classList.remove('active');
+    next.classList.add('active');
+    currentQuestion++;
+    updateProgress();
+    enableNext();
+    scrollToQuiz();
+  }
+
+  function prevQuestion() {
+    if (currentQuestion <= 1) return;
+    const q = document.querySelector('.quiz-question.active');
+    const prev = document.querySelector('.quiz-question[data-question="' + (currentQuestion - 1) + '"]');
+    if (!prev) return;
+    q.classList.remove('active');
+    prev.classList.add('active');
+    currentQuestion--;
+    updateProgress();
+    enableNext();
+    scrollToQuiz();
+  }
+
+  function scrollToQuiz() {
+    document.getElementById('quiz-progress').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  document.querySelectorAll('.quiz-question').forEach(q => {
+    const key = q.dataset.key;
+    q.querySelectorAll('.quiz-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        q.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        answers[key] = opt.dataset.value;
+        enableNext();
+      });
+    });
+  });
+
+  function showResults() {
+    document.getElementById('quiz-form').style.display = 'none';
+    const res = computeProfile();
+
+    document.getElementById('result-name').textContent = res.name;
+    document.getElementById('result-desc').textContent = res.description;
+
+    const charsList = document.getElementById('result-chars');
+    charsList.innerHTML = '';
+    res.characteristics.forEach(c => { const li = document.createElement('li'); li.textContent = c; charsList.appendChild(li); });
+
+    const famList = document.getElementById('result-families');
+    famList.innerHTML = '';
+    res.families.forEach(f => { const li = document.createElement('li'); li.textContent = f; famList.appendChild(li); });
+
+    const pointsEl = document.getElementById('result-points');
+    pointsEl.innerHTML = '';
+    res.points.forEach((p, i) => {
+      const div = document.createElement('div');
+      div.className = 'results__family-step';
+      div.innerHTML = '<span class="results__family-step-num">0' + (i + 1) + '</span>' + p;
+      pointsEl.appendChild(div);
+    });
+
+    const concEl = document.getElementById('result-concentration');
+    concEl.innerHTML = '';
+    res.concentration.forEach((c, i) => {
+      const div = document.createElement('div');
+      div.className = 'results__family-step';
+      div.innerHTML = '<span class="results__family-step-num">0' + (i + 1) + '</span>' + c;
+      concEl.appendChild(div);
+    });
+
+    const catsEl = document.getElementById('result-categories');
+    catsEl.innerHTML = '';
+    res.categories.forEach(cat => {
+      const div = document.createElement('div');
+      div.className = 'results__category';
+      div.innerHTML = '<span class="results__category-name">' + cat.name + '</span><span class="results__category-desc">' + cat.desc + '</span>';
+      catsEl.appendChild(div);
+    });
+
+    // CTA bloc redirection
+    const catKey = getCategoryFromProfile(answers['universe'], answers['personality'], answers['season'], answers['avoid']);
+    const cat = CATEGORY_MAP[catKey];
+    document.getElementById('result-cta-title').textContent = 'Votre sélection : ' + cat.label;
+    document.getElementById('result-cta-desc').textContent = cat.desc;
+    document.getElementById('result-cta-link').href = cat.url;
+
+    document.getElementById('quiz-intro').style.display = 'none';
+    const resultsEl = document.getElementById('quiz-results');
+    resultsEl.style.display = 'block';
+    setTimeout(() => {
+      const top = resultsEl.getBoundingClientRect().top + window.scrollY - 40;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }, 100);
+  }
+
+  function computeProfile() {
+    const universe = answers['universe'];
+    const intensity = answers['intensity'];
+    const season = answers['season'];
+    const skinType = answers['skin_type'];
+    const personality = answers['personality'];
+    const avoid = answers['avoid'];
+    const longevity = answers['longevity'];
+    const budget = answers['budget'];
+    const sensitivity = parseInt(answers['sensitivity_level']) || 3;
+
+    let name = '';
+    let description = '';
+    const chars = [];
+    const families = [];
+    const points = [];
+    const concentration = [];
+    const cats = [];
+
+    if (universe === 'nature') {
+      if (personality === 'free' || personality === 'dynamic') {
+        name = 'L\'Explorateur Olfactif';
+        description = "Votre profil révèle une sensibilité aux grands espaces, aux matières brutes et aux accords authentiques. Vous recherchez une parfumerie ancrée dans le réel, à l'écart des conventions et des codes marketing. Les maisons de niche, les extraits naturels et les compositions aromatiques ou aquatiques vous correspondent.";
+      } else {
+        name = 'Le Contemplatif Naturel';
+        description = "Votre univers olfactif gravite autour de la nature dans ses formes les plus pures. Les fragrances vertes, minérales, boisées ou aquatiques résonnent avec votre sensibilité. Vous fuyez l'artificiel et recherchez dans un parfum une forme de connexion sincère avec le vivant.";
+      }
+      chars.push('Attirance marquée pour les compositions naturelles et authentiques');
+      chars.push('Sensibilité aux matières premières d\'origine végétale ou minérale');
+      chars.push('Rejet des accords synthétiques ou trop sophistiqués');
+      families.push('Aromatique — herbes fraîches, plantes, fines herbes');
+      families.push('Boisé — vétiver, cèdre, mousse, patchouli vert');
+      families.push('Hespéridé — bergamote, yuzu, feuilles froissées');
+      if (season === 'summer') families.push('Aquatique — accords marins, sels, embruns');
+    } else if (universe === 'flowers') {
+      name = 'L\'Âme Florale';
+      description = "La fleur dans toutes ses déclinaisons est votre langage olfactif. Vous appréciez les accords soyeux, lumineux, souvent féminins, qui évoquent la beauté éphémère d'un jardin en plein épanouissement. Vous êtes attentif à la fidélité des matières, préférant les floraux naturels aux reconstructions chimiques.";
+      chars.push('Sensibilité particulière aux notes de tête et de cœur florales');
+      chars.push('Appétence pour les compositions soyeuses, lumineuses et veloutées');
+      chars.push('Préférence pour les floraux naturels sur les reconstructions synthétiques');
+      families.push('Floral soliflore — rose absolue, jasmin sambac, iris');
+      families.push('Floral bouqueté — compositions multi-florales élaborées');
+      families.push('Chypré floral — bergamote, floral, mousse de chêne');
+      families.push('Oriental floral — floral épicé, accords à l\'ambre et au musc');
+    } else if (universe === 'spice') {
+      name = 'L\'Oriental Assumé';
+      description = "Votre profil révèle un goût affirmé pour les compositions denses, sensoriellement riches et profondément évocatrices. Les parfums chauds, épicés et résineux vous habitent plutôt qu'ils ne vous accompagnent. Vous abordez la parfumerie comme un art à part entière, avec ambition et cohérence.";
+      chars.push('Attirance prononcée pour les compositions chaudes et enveloppantes');
+      chars.push('Sensibilité aux notes de fond riches : ambre, oud, résines, encens');
+      chars.push('Recherche d\'un parfum à forte personnalité et longue tenue');
+      families.push('Oriental épicé — cannelle, cardamome, poivre, safran');
+      families.push('Boisé oriental — oud, santal, encens, ambre');
+      families.push('Gourmand oriental — accord vanille-résine-épices');
+      families.push('Cuir — notes de cuir, tabac, fumée, animalité douce');
+    } else {
+      name = 'Le Sensuel Discret';
+      description = "Votre profil olfactif se distingue par une recherche de confort et de présence intime. Vous ne cherchez pas à imposer votre parfum mais à en faire un prolongement naturel de votre peau. Les muscs propres, les accords poudrés et les matières soyeuses sont votre territoire de prédilection.";
+      chars.push('Attirance pour les accords proches de la peau et du musc naturel');
+      chars.push('Préférence pour les compositions intimes, confortables, non intrusives');
+      chars.push('Sensibilité aux notes de fond douces et aux sillages discrets');
+      families.push('Musqué — musc blanc, musc propre, accord peau-de-bébé');
+      families.push('Poudré — iris, violet, fève tonka, héliotrope');
+      families.push('Floral doux — muguet, pivoine, freesia');
+      families.push('Chypré léger — accord fruits-fleurs-mousse');
+    }
+
+    if (intensity === 'bold') {
+      chars.push('Vous assumez une sillage affirmée qui fait partie de votre présence');
+      families.push('Extrait de Parfum — concentration maximale pour une projection optimale');
+    } else if (intensity === 'light') {
+      chars.push('Vous préférez une présence olfactive intime et personnelle');
+    }
+
+    if (season === 'work') {
+      chars.push('Usage professionnel : vous privilégiez les compositions respectueuses');
+    } else if (season === 'evening') {
+      chars.push('Contexte soirée : vous autorisez davantage d\'audace et de caractère');
+    }
+
+    if (skinType === 'dry') {
+      points.push('Nuque et décolleté — la chaleur corporelle compensera l\'évaporation rapide');
+      points.push('Cheveux — la kératine retient les molécules sur peaux sèches');
+      points.push('Hydrater la peau avant application pour améliorer la tenue');
+      concentration.push('Privilégiez une Eau de Parfum ou un Extrait : les peaux sèches fixent moins le parfum');
+      concentration.push('Évitez les Eaux de Cologne qui s\'évaporeront en moins d\'une heure');
+      concentration.push('Un soin de corps légèrement parfumé en couche de base est conseillé');
+    } else if (skinType === 'oily') {
+      points.push('Poignets — la chaleur naturelle et le sébum amplifient la diffusion');
+      points.push('Décolleté — zone idéale pour les peaux grasses, ne pas surappliquer');
+      points.push('Creux des coudes — diffusion lente et régulière garantie');
+      concentration.push('Les peaux grasses peuvent se permettre une Eau de Toilette avec d\'excellents résultats');
+      concentration.push('Attention à la sursaturation : 2 vaporisations maximum sur peau grasse');
+      concentration.push('Le parfum peut évoluer différemment sur votre peau — toujours tester sur peau');
+    } else if (skinType === 'sensitive') {
+      points.push('Vêtements ou cheveux — éviter le contact direct sur peau réactive');
+      points.push('Décolleté avec distance accrue — vaporiser à 20 cm minimum');
+      points.push('Tester d\'abord sur le poignet et attendre 30 min avant de valider la tolérance');
+      concentration.push('Préférer les Eaux de Cologne ou Eaux de Toilette légères');
+      concentration.push('Rechercher des formulations hypoallergéniques ou sans certains allergènes');
+      concentration.push('Les parfums naturels à base de matières premières sont souvent mieux tolérés');
+    } else {
+      points.push('Nuque et poignets — les deux zones canoniques pour une diffusion équilibrée');
+      points.push('Décolleté — pour les occasions importantes ou les parfums de caractère');
+      points.push('Creux des genoux pour les parfums intenses lors de soirées');
+      concentration.push('Toutes les concentrations vous sont accessibles selon l\'usage et l\'occasion');
+      concentration.push('Eau de Parfum pour le quotidien, Extrait pour les événements importants');
+      concentration.push('Votre peau équilibrée restitue fidèlement la pyramide olfactive');
+    }
+
+    if (longevity === 'very_long') {
+      cats.push({ name: 'Extrait de Parfum', desc: "Concentration entre 20 et 40 % de composés odorants. La forme la plus puissante et la plus durable. Appliqué avec parcimonie, il diffuse pendant 12 à 24 heures." });
+    } else if (longevity === 'long') {
+      cats.push({ name: 'Eau de Parfum', desc: "Concentration entre 15 et 20 %. Format roi du quotidien luxueux. Tient 6 à 12 heures sur la peau, développe pleinement les trois strates de la pyramide olfactive." });
+    } else if (longevity === 'medium') {
+      cats.push({ name: 'Eau de Toilette', desc: "Concentration entre 8 et 15 %. Format versatile et quotidien. Tient 4 à 6 heures, développe prioritairement les têtes et le cœur." });
+    } else {
+      cats.push({ name: 'Eau de Cologne', desc: "Concentration entre 2 et 5 %. Format léger, frais et éphémère. Tient 2 à 4 heures. À réappliquer volontiers." });
+    }
+
+    if (budget === 'niche') {
+      cats.push({ name: 'Parfumerie de Niche', desc: "Explorez des maisons comme Diptyque, Le Labo, Byredo, Maison Margiela Replica, Serge Lutens ou Frederic Malle. Ces créateurs proposent des compositions aventureuses et une vision affirmée." });
+      chars.push('Ouverture à la parfumerie de niche et aux compositions singulières');
+    } else if (budget === 'prestige') {
+      cats.push({ name: 'Maisons de Luxe', desc: "Les collections privées de maisons comme Dior, Chanel, Hermès, Guerlain ou Tom Ford offrent une qualité de matières premières supérieure à leurs lignes principales." });
+    } else {
+      cats.push({ name: 'Grandes Maisons & Collections Accessibles', desc: "Des maisons comme Yves Saint Laurent, Lancôme, Armani ou Paco Rabanne proposent des formulations de qualité. Les coffrets de découverte permettent de tester avant d'investir." });
+    }
+
+    if (sensitivity >= 4) {
+      chars.push('Sensibilité élevée aux parfums intenses : compositions épurées recommandées');
+      cats.push({ name: 'Parfums Hypoallergéniques', desc: "Certaines maisons formulent des parfums sans les allergènes les plus courants répertoriés par l'IFRA. Une alternative : l'hydrolat de plantes, sans alcool ni aldéhyde." });
+    }
+
+    if (avoid === 'heavy') {
+      cats.push({ name: 'Légèreté et Transparence', desc: "Orientez-vous vers les concentrations Eau de Toilette ou Cologne, les familles hespéridées, aquatiques et les floraux aériens." });
+    } else if (avoid === 'sweet') {
+      cats.push({ name: 'Compositions Sèches & Structurées', desc: "Les parfums boisés secs (vétiver, cèdre, genévrier), les cuirs et les fougères offrent caractère et sophistication sans sucrosité." });
+    } else if (avoid === 'chemical') {
+      cats.push({ name: 'Parfumerie Naturelle', desc: "Privilégiez les parfums formulés à partir de matières premières naturelles certifiées (absolus, huiles essentielles, résines)." });
+    }
+
+    cats.push({ name: 'L\'Art de la Dégustation', desc: "Ne jamais acheter un parfum sans l'avoir porté au minimum 4 heures sur peau. La décision finale se prend sur fond de note, pas sur les têtes." });
+
+    return {
+      name,
+      description,
+      characteristics: chars.slice(0, 6),
+      families: families.slice(0, 6),
+      points: points.slice(0, 4),
+      concentration: concentration.slice(0, 4),
+      categories: cats.slice(0, 6)
+    };
+  }
+
+  function restartQuiz() {
+    Object.keys(answers).forEach(k => delete answers[k]);
+    answers['sensitivity_level'] = 3;
+    document.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+    document.querySelectorAll('.quiz-btn--primary').forEach(b => {
+      if (b.getAttribute('onclick') !== 'showResults()') b.disabled = true;
+    });
+    document.getElementById('sensitivity-scale').value = 3;
+    document.getElementById('sensitivity-value').textContent = '3';
+    document.getElementById('quiz-results').style.display = 'none';
+    document.getElementById('quiz-intro').style.display = '';
+    document.getElementById('quiz-form').style.display = 'block';
+    document.querySelectorAll('.quiz-question').forEach(q => q.classList.remove('active'));
+    document.querySelector('.quiz-question[data-question="1"]').classList.add('active');
+    currentQuestion = 1;
+    updateProgress();
+    scrollToQuiz();
+  }
+
+  document.querySelectorAll('.pd-dot-g').forEach(dotG => {
+    const id = dotG.id;
+    const card = document.querySelector('.pulse-detail-card[data-target="' + id + '"]');
+    dotG.addEventListener('mouseenter', () => { if (card) card.classList.add('highlighted'); });
+    dotG.addEventListener('mouseleave', () => { if (card) card.classList.remove('highlighted'); });
+  });
+  document.querySelectorAll('.pulse-detail-card').forEach(card => {
+    const target = card.dataset.target;
+    const dotG = document.getElementById(target);
+    card.addEventListener('mouseenter', () => { if (dotG) dotG.classList.add('hovered'); });
+    card.addEventListener('mouseleave', () => { if (dotG) dotG.classList.remove('hovered'); });
+  });
+
+  function revealOnScroll() {
+    document.querySelectorAll('.reveal').forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight - 60) el.classList.add('visible');
+    });
+  }
+  window.addEventListener('scroll', revealOnScroll, { passive: true });
+  revealOnScroll();
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<script>
+  (function(){
+    var nav = document.getElementById('ep-nav');
+    var hero = document.querySelector('.hero');
+    if (!nav || !hero) return;
+    var obs = new IntersectionObserver(function(entries){
+      nav.classList.toggle('scrolled', !entries[0].isIntersecting);
+    }, { threshold: 0 });
+    obs.observe(hero);
+  })();
+</script>
+</body>
+</html>
