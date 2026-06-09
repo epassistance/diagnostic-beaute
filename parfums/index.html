@@ -389,7 +389,8 @@
   .ep-nav__btn--ghost:hover { border-color: var(--black); background: transparent; }
   @media (max-width: 768px) {
     .results__restart { flex-direction: column; align-items: center; gap: 16px; text-align: center; }
-    #pulse-svg .pd-title { font-size: 15px; }
+    #pulse-svg { min-width: unset; width: 100%; }
+    #pulse-svg .pd-title { font-size: 16px; }
 
     .ep-nav__inner { padding: 0 16px; gap: 12px; }
     .ep-nav__context { display: none; }
@@ -553,6 +554,7 @@
     </div>
 
     <div class="pulse-svg-wrap reveal">
+      <!-- SVG DESKTOP (caché sur mobile) -->
       <svg id="pulse-svg" viewBox="100 0 700 560" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;display:block;margin:0 auto;">
         <style>
           .pd-fig     { fill: #e4e4ea; }
@@ -575,13 +577,13 @@
         <rect class="pd-fig" x="490" y="195" width="26" height="82" rx="13"/>
         <rect class="pd-fig" x="398" y="232" width="38" height="245" rx="16"/>
         <rect class="pd-fig" x="444" y="232" width="38" height="245" rx="16"/>
-        <polyline class="pd-line" points="440,14 300,14 260,14"/>
-        <polyline class="pd-line" points="410,42 300,42 260,42"/>
-        <polyline class="pd-line" points="440,83 300,83 260,83"/>
-        <polyline class="pd-line" points="440,115 300,115 260,115"/>
-        <polyline class="pd-line" points="503,195 610,195 630,195"/>
-        <polyline class="pd-line" points="511,245 610,245 630,245"/>
-        <polyline class="pd-line" points="471,380 580,380 600,380"/>
+        <polyline class="pd-line" points="440,14 330,14 300,14"/>
+        <polyline class="pd-line" points="410,42 330,42 300,42"/>
+        <polyline class="pd-line" points="440,83 330,83 300,83"/>
+        <polyline class="pd-line" points="440,115 330,115 300,115"/>
+        <polyline class="pd-line" points="503,195 570,195 590,195"/>
+        <polyline class="pd-line" points="511,245 570,245 590,245"/>
+        <polyline class="pd-line" points="471,380 560,380 580,380"/>
         <g class="pd-dot-g" id="pdg-hair"><circle class="pd-dot-bg" cx="440" cy="14" r="8"/><circle class="pd-dot-ctr" cx="440" cy="14" r="3"/><circle class="pd-dot-ring" cx="440" cy="14" r="12"/></g>
         <g class="pd-dot-g" id="pdg-temple"><circle class="pd-dot-bg" cx="410" cy="42" r="8"/><circle class="pd-dot-ctr" cx="410" cy="42" r="3"/><circle class="pd-dot-ring" cx="410" cy="42" r="12"/><circle class="pd-dot-bg" cx="470" cy="42" r="8"/><circle class="pd-dot-ctr" cx="470" cy="42" r="3"/><circle class="pd-dot-ring" cx="470" cy="42" r="12"/></g>
         <g class="pd-dot-g" id="pdg-neck"><circle class="pd-dot-bg" cx="440" cy="83" r="8"/><circle class="pd-dot-ctr" cx="440" cy="83" r="3"/><circle class="pd-dot-ring" cx="440" cy="83" r="12"/></g>
@@ -589,13 +591,13 @@
         <g class="pd-dot-g" id="pdg-elbow"><circle class="pd-dot-bg" cx="376" cy="195" r="8"/><circle class="pd-dot-ctr" cx="376" cy="195" r="3"/><circle class="pd-dot-ring" cx="376" cy="195" r="12"/><circle class="pd-dot-bg" cx="503" cy="195" r="8"/><circle class="pd-dot-ctr" cx="503" cy="195" r="3"/><circle class="pd-dot-ring" cx="503" cy="195" r="12"/></g>
         <g class="pd-dot-g" id="pdg-wrist"><circle class="pd-dot-bg" cx="376" cy="245" r="8"/><circle class="pd-dot-ctr" cx="376" cy="245" r="3"/><circle class="pd-dot-ring" cx="376" cy="245" r="12"/><circle class="pd-dot-bg" cx="503" cy="245" r="8"/><circle class="pd-dot-ctr" cx="503" cy="245" r="3"/><circle class="pd-dot-ring" cx="503" cy="245" r="12"/></g>
         <g class="pd-dot-g" id="pdg-knee"><circle class="pd-dot-bg" cx="417" cy="380" r="8"/><circle class="pd-dot-ctr" cx="417" cy="380" r="3"/><circle class="pd-dot-ring" cx="417" cy="380" r="12"/><circle class="pd-dot-bg" cx="463" cy="380" r="8"/><circle class="pd-dot-ctr" cx="463" cy="380" r="3"/><circle class="pd-dot-ring" cx="463" cy="380" r="12"/></g>
-        <text class="pd-title" x="252" y="18" text-anchor="end">Cheveux</text>
-        <text class="pd-title" x="252" y="46" text-anchor="end">Tempes</text>
-        <text class="pd-title" x="252" y="87" text-anchor="end">Cou &amp; Nuque</text>
-        <text class="pd-title" x="252" y="119" text-anchor="end">Décolleté</text>
-        <text class="pd-title" x="638" y="199" text-anchor="start">Creux du Coude</text>
-        <text class="pd-title" x="638" y="249" text-anchor="start">Poignets</text>
-        <text class="pd-title" x="608" y="384" text-anchor="start">Creux des Genoux</text>
+        <text class="pd-title" x="292" y="18" text-anchor="end">Cheveux</text>
+        <text class="pd-title" x="292" y="46" text-anchor="end">Tempes</text>
+        <text class="pd-title" x="292" y="87" text-anchor="end">Cou &amp; Nuque</text>
+        <text class="pd-title" x="292" y="119" text-anchor="end">Décolleté</text>
+        <text class="pd-title" x="598" y="199" text-anchor="start">Creux du Coude</text>
+        <text class="pd-title" x="598" y="249" text-anchor="start">Poignets</text>
+        <text class="pd-title" x="588" y="384" text-anchor="start">Creux des Genoux</text>
       </svg>
     </div>
 
