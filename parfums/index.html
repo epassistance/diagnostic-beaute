@@ -387,6 +387,9 @@
   .ep-nav__btn--ghost { background: transparent; color: var(--black); border-color: var(--grey-mid); }
   .ep-nav__btn--ghost:hover { border-color: var(--black); background: transparent; }
   @media (max-width: 768px) {
+    .results__restart { flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+    #pulse-svg .pd-title { font-size: 15px; }
+
     .ep-nav__inner { padding: 0 16px; gap: 12px; }
     .ep-nav__context { display: none; }
     .ep-nav__divider { display: none; }
@@ -560,7 +563,7 @@
           .pd-dot-g:hover .pd-dot-bg  { stroke: #7a8a8a; }
           .pd-dot-g:hover .pd-dot-ctr { fill: #7a8a8a; }
           .pd-dot-g:hover .pd-dot-ring { opacity: 1; }
-          .pd-title     { font-family: 'Futura','Century Gothic',sans-serif; font-size: 15px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; fill: #1a1a1a; }
+          .pd-title     { font-family: 'Futura','Century Gothic',sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; fill: #1a1a1a; }
         </style>
         <circle class="pd-fig" cx="440" cy="42" r="32"/>
         <rect class="pd-fig" x="429" y="73" width="22" height="20" rx="8"/>
@@ -920,7 +923,7 @@
         <span class="results__cta-label">Découvrir la sélection</span>
         <h3 class="results__cta-title" id="result-cta-title"></h3>
         <p class="results__cta-desc" id="result-cta-desc"></p>
-        <a class="results__cta-btn" id="result-cta-link" href="#" target="_blank">Voir la sélection Eldora Prime</a>
+        <a class="results__cta-btn" id="result-cta-link" href="#">Voir la sélection Eldora Prime</a>
       </div>
 
       <div class="results__restart">
